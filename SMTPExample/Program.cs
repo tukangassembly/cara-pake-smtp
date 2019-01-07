@@ -7,6 +7,10 @@ namespace SMTPExample
 {
     class Program
     {
+        /// <summary>
+        /// Biar bisa jalan lu harus nyalain less secure apps di mail google lu, https://support.google.com/accounts/answer/6010255?hl=en
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             //Server smtp
@@ -24,8 +28,8 @@ namespace SMTPExample
 
             //User credential email lu
             //Seting ini harusnya ada di appsettings.json
-            var senderEmail = "konak.konak2015@gmail.com"; //Email lu
-            var password = "bocahkonak2015"; //password email lu
+            var senderEmail = "pengirim@gmail.com"; //Email lu
+            var password = "masukin password lu"; //password email lu
 
             //Masukin credential,harusnya di project krn dah di setting di startup gak usah lagi
             var credential = new NetworkCredential();
@@ -35,9 +39,9 @@ namespace SMTPExample
 
             //Set sender info header(yang akan ditampilkan di email), receiver info, body, dll
             //pengirim
-            var sender = new MailAddress("konak.konak2015@gmail.com", "LALALA"); //address email pengirim, Nama lu yang mo ditampilkan(opsional)
+            var sender = new MailAddress("pengirim@gmail.com", "pengirim"); //address email pengirim, Nama lu yang mo ditampilkan(opsional)
             //penerima
-            var receiver = new MailAddress("coyotestarkz@gmail.com"); //address email penerima
+            var receiver = new MailAddress("penerima@gmail.com"); //address email penerima
 
             //Isi subject, dan body email
             var message = new MailMessage(sender, receiver); //Isi parameter pengirim, dan penerimanya
